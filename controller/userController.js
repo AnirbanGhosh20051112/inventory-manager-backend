@@ -1,6 +1,6 @@
 let asyncWrapper = require('../utils/asyncWrapper')
 let validate = require('../utils/validate')
-let { usersModel } = require('../models/userModel')
+let usersModel = require('../Model/usermodel')
 let bycrypt = require('bcryptjs')
 let jwt = require('jsonwebtoken')
 let config = require('../config/config')

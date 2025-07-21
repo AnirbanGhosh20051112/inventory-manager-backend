@@ -6,25 +6,24 @@ const { authenticateJWT } = require('../middleware/auth')
 
 
 
-router.get(
-    '/:id', 
-    authenticateJWT,
-    rules.id,
-    userController.getUserById
-)
+// router.get(
+//     '/:id', 
+//     authenticateJWT,
+//     rules.id,
+//     userController.getUserById
+// )
 
-router.post(
-    '/', 
-    [rules.name, rules.email, rules.password],
-    userController.createUser
-)
+// router.post(
+//     '/', 
+//     [rules.name, rules.email, rules.password],
+//     userController.createUser
+// )
 
-router.put(
-    '/:id', 
-    authenticateJWT,
-    userController.updateUser
-)
+// router.put(
+//     '/:id', 
+//     authenticateJWT,
+//     userController.updateUser
+// )
 
 module.exports = router;
 
-utils
