@@ -1,12 +1,12 @@
 express = require('express');
 const router = express.Router();
-const userController = require('../controllers/userController')
+const userController = require('../controller/userController');
 const rules = require('../utils/rules')
 const { authenticateJWT } = require('../middleware/auth')
 
 
 
-
+router.get('/', userController.getAllUsers)
 router.get(
     '/:id', 
     authenticateJWT,

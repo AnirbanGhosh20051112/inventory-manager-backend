@@ -6,7 +6,6 @@ let bycrypt = require('bcryptjs')
 
 
 
-
 const createUser = asyncWrapper(async (req, res) => {
     validate(req)
 
@@ -20,14 +19,12 @@ const createUser = asyncWrapper(async (req, res) => {
         })
     }
 
-
     let isSaved = usersModel.create({
         name: name,
         email: email,
         password: password,
         status: 'active'
     })
-
 
     if (!isSaved) {
         return res.status(400).json({
@@ -39,7 +36,6 @@ const createUser = asyncWrapper(async (req, res) => {
         status: true,
         message: 'User Created Successfully'
     })
-
 
 })
 
@@ -63,9 +59,7 @@ const getUserById = asyncWrapper(async (req, res) => {
     })
 })
 
-
 const updateUser = asyncWrapper(async (req, res) => {
-
 
     const { id } = req.params
     const { name, email, password, age } = req.body
@@ -94,7 +88,6 @@ const updateUser = asyncWrapper(async (req, res) => {
         }
     }
 
-
     let isUpdated = await usersModel.findByIdAndUpdate(id, {
         name: name,
         email: email,
@@ -114,7 +107,6 @@ const updateUser = asyncWrapper(async (req, res) => {
     })
 
 })
-
 
 module.exports = {
     createUser,

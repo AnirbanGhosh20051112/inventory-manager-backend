@@ -1,21 +1,30 @@
-express = require('express');
+ express = require('express');
 const router = express.Router();
-const authController = require('../controllers/authController')
+const userController = require('../controller/userController')
 const rules = require('../utils/rules')
+const { authenticateJWT } = require('../middleware/auth')
 
+
+
+router.get(
+    '/:id', 
+    authenticateJWT,
+    rules.id,
+    userController.getUserById
+)
 
 router.post(
-    '/signup', 
+    '/', 
     [rules.name, rules.email, rules.password],
-    authController.signUp
+    userController.createUser
 )
 
-
-router.post(
-    '/signin',
-    [rules.email, rules.password], 
-    authController.signIn
+router.put(
+    '/:id', 
+    authenticateJWT,
+    userController.updateUser
 )
-
 
 module.exports = router;
+
+utils

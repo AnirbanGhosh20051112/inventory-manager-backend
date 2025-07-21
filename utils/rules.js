@@ -1,6 +1,5 @@
 const { param, body, query, check } = require('express-validator');
 
-
 const name = [
     body('name')
         .notEmpty()
@@ -35,10 +34,10 @@ const id = [
         .withMessage('Invalid ID format.'),
 ];
 
-
 module.exports = {
     name,
     email,
     password,
     id
 }
+

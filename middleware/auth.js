@@ -2,7 +2,6 @@ const config = require('../config/config');
 const jwt = require('jsonwebtoken');
 
 
-
 const authenticateJWT = async (req, res, next) => {
     const authHeader = req.header('authorization');
     console.log(authHeader);
@@ -31,7 +30,6 @@ const authenticateJWT = async (req, res, next) => {
     console.log('Decoded token:', decoded);
     next();
 };
-
 
 
 module.exports = {

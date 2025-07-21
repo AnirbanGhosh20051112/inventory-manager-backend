@@ -6,4 +6,3 @@ function customError(statusCode = 500, message = 'Internal Server Error', valida
   }
   
   module.exports = customError;
-  

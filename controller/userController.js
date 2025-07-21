@@ -46,7 +46,6 @@ const signUp = asyncWrapper(async (req, res) => {
         token: token,
     })
 
-
 })
 
 const signIn = asyncWrapper(async (req, res) => {
@@ -84,7 +83,6 @@ const signIn = asyncWrapper(async (req, res) => {
     })
 
 })
-
 
 
 
